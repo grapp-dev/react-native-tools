@@ -30,9 +30,10 @@ export class FileStructureBuilderService extends Effect.Service<FileStructureBui
                   screen.toFileTemplate(),
                   Option.map(
                     Array.map(([file, content]) => {
+                      const filepath = Path.resolve(Path.dirname(path), file);
                       return {
-                        title: file,
-                        value: Tuple.make(Path.resolve(Path.dirname(path), file), content),
+                        title: Path.relative(process.cwd(), filepath),
+                        value: Tuple.make(filepath, content),
                       };
                     }),
                   ),
