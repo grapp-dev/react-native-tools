@@ -11,6 +11,7 @@ export default defineConfig({
   external: [
     'effect',
     '@effect/platform',
+    '@effect/platform-node',
     '@effect/cli',
     '@inquirer/prompts',
     'jscodeshift',

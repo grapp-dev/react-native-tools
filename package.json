@@ -1,6 +1,6 @@
 {
   "name": "@grapp/react-native-tools",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "bin": {
     "react-native-tools": "./bin/react-native-tools"
   },
@@ -20,7 +20,6 @@
     "@grapp/ts-config": "^0.1.3",
     "@types/bun": "latest",
     "@types/cli-color": "^2.0.6",
-    "@types/fuzzy-search": "^2.1.5",
     "@types/jscodeshift": "^0.12.0",
     "@types/mustache": "^4.2.5",
     "tsup": "^8.4.0"
