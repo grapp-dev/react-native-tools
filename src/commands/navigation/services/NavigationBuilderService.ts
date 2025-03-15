@@ -4,9 +4,9 @@ import { Array, Effect, pipe, Record, Tuple } from 'effect';
 import { Option } from 'effect';
 import j, { ExportNamedDeclaration, ImportSpecifier, VariableDeclaration } from 'jscodeshift';
 
-import { FileSystemService } from './FileSystemService';
 import { TreeTraversalData, TreeTraversalService } from './TreeTraversalService';
 
+import { FileSystemService } from '../../../services';
 import { Expression, Navigator, Screen } from '../data';
 
 export class NavigationBuilderService extends Effect.Service<NavigationBuilderService>()(

@@ -2,10 +2,9 @@ import * as Platform from '@effect/platform';
 
 import { Array, Effect, Function, Option, pipe, Tuple } from 'effect';
 
-import { FileSystemService } from './FileSystemService';
 import { TreeTraversalService } from './TreeTraversalService';
 
-import { PrettierService, PromptService } from '../../../services';
+import { FileFormatterService, FileSystemService, PromptService } from '../../../services';
 
 export class FileStructureBuilderService extends Effect.Service<FileStructureBuilderService>()(
   'FileStructureBuilder',
@@ -16,7 +15,7 @@ export class FileStructureBuilderService extends Effect.Service<FileStructureBui
       const FileSystem = yield* FileSystemService;
       const Prompt = yield* PromptService;
       const Path = yield* Platform.Path.Path;
-      const Prettier = yield* PrettierService;
+      const FileFormatter = yield* FileFormatterService;
 
       const build = (path: string) => {
         return pipe(
@@ -63,7 +62,7 @@ export class FileStructureBuilderService extends Effect.Service<FileStructureBui
               Array.map(selectedFiles, selectedFile => {
                 return Effect.gen(function* (_) {
                   const [path, source] = selectedFile;
-                  const content = yield* Prettier.format(source);
+                  const content = yield* FileFormatter.format(source);
                   yield* FileSystem.writeFileFromString(path, content);
                 });
               }),

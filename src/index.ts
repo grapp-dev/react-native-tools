@@ -6,10 +6,11 @@ import { Effect, Logger, LogLevel, pipe } from 'effect';
 import { NavigationCommand } from './commands';
 import {
   CommandService,
+  FileFormatterService,
+  FileSystemService,
   GlobService,
   JsonnetService,
   LoggerService,
-  PrettierService,
   PromptService,
 } from './services';
 
@@ -29,7 +30,8 @@ const cli = pipe(
     LoggerService.layer,
     NodeContext.layer,
     JsonnetService.layer,
-    PrettierService.layer,
+    FileSystemService.layer,
+    FileFormatterService.layer,
     GlobService.layer,
     CommandService.layer,
     PromptService.layer,

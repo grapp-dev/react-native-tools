@@ -2,10 +2,9 @@ import * as Platform from '@effect/platform';
 
 import { Effect } from 'effect';
 
-import { FileSystemService } from './FileSystemService';
 import { TreeTraversalService } from './TreeTraversalService';
 
-import { CommandService } from '../../../services';
+import { CommandService, FileSystemService } from '../../../services';
 import { Graph } from '../data';
 
 export class GraphBuilderService extends Effect.Service<GraphBuilderService>()('GraphBuilder', {

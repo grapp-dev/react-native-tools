@@ -1,11 +1,11 @@
 import { Data, Effect, pipe } from 'effect';
 
-export class PrettierError extends Data.TaggedError('PrettierError')<{
+export class FileFormatterError extends Data.TaggedError('FileFormatterError')<{
   message: string;
   cause: unknown;
 }> {}
 
-export class PrettierService extends Effect.Service<PrettierService>()('Prettier', {
+export class FileFormatterService extends Effect.Service<FileFormatterService>()('FileFormatter', {
   effect: Effect.gen(function* (_) {
     const format = (source: string) => {
       return pipe(
@@ -29,5 +29,5 @@ export class PrettierService extends Effect.Service<PrettierService>()('Prettier
   }),
   dependencies: [],
 }) {
-  static layer = PrettierService.Default;
+  static layer = FileFormatterService.Default;
 }

@@ -1,6 +1,4 @@
 {
-  resolveObject(name, object):
-    if std.isObject(object) && object != null then { [name]: object } else {},
   Navigator(name, data)::
     if std.isString(data) then
       {

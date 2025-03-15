@@ -2,9 +2,9 @@ import * as Platform from '@effect/platform';
 
 import { Array, Effect, pipe } from 'effect';
 
-import { FileSystemService } from './FileSystemService';
 import { TreeTraversalService } from './TreeTraversalService';
 
+import { FileSystemService } from '../../../services';
 import { Navigator, Screen } from '../data';
 
 export class RoutesBuilderService extends Effect.Service<RoutesBuilderService>()('RoutesBuilder', {
