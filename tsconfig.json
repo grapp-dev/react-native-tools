@@ -1,0 +1,10 @@
+{
+  "extends": "@grapp/ts-config/default.json",
+  "compilerOptions": {
+    "types": ["bun-types"],
+    "exactOptionalPropertyTypes": true,
+    "noErrorTruncation": true,
+    "noEmit": true
+  },
+  "include": ["./src/**/*"]
+}
